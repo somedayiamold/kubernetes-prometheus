@@ -43,7 +43,14 @@ kubectl create -f grafana-dashboard-configmap.yaml
 执行导入job  
 kubectl create -f grafana-dashboard-job.yaml  
 执行成功之后打开grafana，会发现报错DS_PROMETHEUS找不到，在dashboard设置中添加一个变量DS_PROMETHEUS即可  
-通过grafana可以导入prometheus的dashboard和其他k8s dashboard，自定义配置，具体参考grafana相关文档  
+通过grafana可以导入prometheus的dashboard和其他k8s dashboard，自定义配置，具体参考grafana相关文档 
+### 10. 导入prometheus数据到grafana  
+创建configmap  
+kubectl create -f grafana-dashboard-configmap.yaml  
+执行导入job  
+kubectl create -f grafana-dashboard-job.yaml  
+执行成功之后打开grafana，会发现报错DS_PROMETHEUS找不到，在dashboard设置中添加一个变量DS_PROMETHEUS即可  
+
 
 ### 参考：  
 * http://dockone.io/article/2579  
