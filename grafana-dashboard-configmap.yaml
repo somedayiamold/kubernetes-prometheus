@@ -1797,7 +1797,7 @@ data:
           "multi": false,
           "name": "instance",
           "options": [],
-          "query": "label_values(instance)",
+          "query": "label_values(container_cpu_usage_seconds_total, instance)",
           "refresh": 1,
           "regex": "",
           "type": "query"
@@ -1825,14 +1825,14 @@ data:
       "links": [],
       "gnetId": 737
     }
-  prometheus-datasource.json: |
-    {
-      "name": "prometheus",
-      "type": "prometheus",
-      "url": "http://prometheus.dingduoduo.hualala.com",
-      "access": "direct",
-      "basicAuth": false
-    }
+  #prometheus-datasource.json: |
+  #  {
+  #    "name": "prometheus",
+  #    "type": "prometheus",
+  #    "url": "http://prometheus.xxxx.com",
+  #    "access": "direct",
+  #    "basicAuth": false
+  #  }
 kind: ConfigMap
 metadata:
   creationTimestamp: null
