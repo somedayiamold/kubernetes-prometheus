@@ -36,7 +36,7 @@ spec:
               if [ -e "$file" ] ; then
                 echo "importing $file" &&
                 curl --silent --fail --show-error \
-                  --request POST http://admin:admin@grafana.xxxx.com/api/datasources \
+                  --request POST http://admin:admin@grafana.xxxxx.com/api/datasources \
                   --header "Content-Type: application/json" \
                   --data-binary "@$file" ;
                 echo "" ;
@@ -50,7 +50,7 @@ spec:
                   echo ',"overwrite":true}' ) \
                 | jq -c '.' \
                 | curl --silent --fail --show-error \
-                  --request POST http://admin:admin@grafana.xxxx.com/api/dashboards/db \
+                  --request POST http://admin:admin@grafana.xxxxx.com/api/dashboards/db \
                   --header "Content-Type: application/json" \
                   --data-binary "@-" ;
                 echo "" ;

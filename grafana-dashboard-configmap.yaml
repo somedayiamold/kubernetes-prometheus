@@ -1829,7 +1829,7 @@ data:
   #  {
   #    "name": "prometheus",
   #    "type": "prometheus",
-  #    "url": "http://prometheus.xxxx.com",
+  #    "url": "http://prometheus.xxxxx.com",
   #    "access": "direct",
   #    "basicAuth": false
   #  }

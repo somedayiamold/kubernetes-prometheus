@@ -20,7 +20,6 @@ spec:
       - name: prometheus
         image: docker.io/prom/prometheus
         args:
-          - '--storage.tsdb.retention=12h'
           - '--config.file=/etc/prometheus/prometheus.yaml'
         ports:
         - name: webui
@@ -28,19 +27,19 @@ spec:
         resources:
           requests:
             cpu: 500m
-            memory: 500M
+            memory: 1024M
           limits:
             cpu: 500m
-            memory: 500M
+            memory: 1024M
         volumeMounts:
         - name: config-volume
           mountPath: /etc/prometheus
-        - name: rules-volume
-          mountPath: /etc/prometheus-rules
+        - name: data-path
+          mountPath: /prometheus/data
       volumes:
       - name: config-volume
         configMap:
           name: prometheus-core
-      - name: rules-volume
-        configMap:
-          name: prometheus-rules
+      - name: data-path
+        hostPath:
+          path: /data/prometheus
